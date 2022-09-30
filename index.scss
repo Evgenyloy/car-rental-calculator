@@ -1,0 +1,149 @@
+@import "./reset";
+
+body {
+  background-color: rgb(209, 230, 248);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  height: 650px;
+  padding: 10px;
+
+  display: flex;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 30px;
+  color: #111;
+  &__item {
+    margin-bottom: 40px;
+  }
+
+  &__item-header {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+  &-left {
+    flex-basis: 650px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 50px;
+  }
+  &-right {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+  &__order {
+    margin-bottom: 15px;
+  }
+  &__total {
+    font-size: 40px;
+    font-weight: 400;
+    color: #282b31;
+    position: relative;
+    &::after {
+      content: "\20AC";
+      margin-left: 10px;
+    }
+  }
+}
+
+.switcher {
+  display: flex;
+  &__item label {
+    display: inline-block;
+    padding: 20px 30px;
+    font-size: 18px;
+    color: #111;
+    border: 2px solid #f5ba10;
+    cursor: pointer;
+
+    transition: all 0.1s;
+    &:not(:first-child) {
+      margin-left: -2px;
+    }
+    &:hover {
+      background-color: rgba(245, 186, 16, 0.15);
+    }
+  }
+
+  &__item-input {
+    display: none;
+    &:checked + label {
+      background-color: #f5ba10;
+      color: #fff;
+    }
+  }
+}
+
+.slider {
+  &__input {
+    -webkit-appearance: none;
+    width: 500px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 20px;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 25px;
+      height: 25px;
+      background-color: #068323;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+  }
+  &__output {
+    font-size: 48px;
+    margin-left: 30px;
+    color: #282b31;
+  }
+}
+
+.option {
+  &__item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    display: none;
+    &:checked + .option__checkmark::after {
+      display: block;
+    }
+  }
+
+  &__checkmark {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      display: none;
+      position: absolute;
+      content: "";
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #0c76ee;
+    }
+  }
+}

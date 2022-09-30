@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>car rental calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <form class="form form-left" action="#">
+            <div class="form__item">
+                <div class="form__item-header">Choose your rate</div>
+                <ul class="switcher">
+                    <li class="switcher__item">
+                        <input class="switcher__item-input" type="radio" name="tariff" value="economy" id="economy">
+                        <label for="economy">Economy</label>
+                    </li>
+                    <li class="switcher__item">
+                        <input class="switcher__item-input" type="radio" name="tariff" value="comfort" id="comfort"
+                            checked>
+                        <label for="comfort">Comfort</label>
+                    </li>
+                    <li class="switcher__item">
+                        <input class="switcher__item-input" type="radio" name="tariff" value="business" id="business">
+                        <label for="business">Business</label>
+                    </li>
+                    <li class="switcher__item">
+                        <input class="switcher__item-input" type="radio" name="tariff" value="premium" id="premium">
+                        <label for="premium">Premium</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="form__item">
+                <div class="form__item-header">How many hours do we rent (minimum 2 hours)</div>
+                <div class="slider">
+                    <input class="slider__input" type="range" name="time" id="time" type="range" step="1" min="2"
+                        max="96" value="2">
+                    <output class="slider__output" id="volume" for="time">2</output>
+                </div>
+            </div>
+            <div class="form__item">
+                <div class="form__item-header">Extra options</div>
+                <div class="option">
+                    <div class="option__item">
+                        <input class="option__input" type="checkbox" name="option1" id="option1">
+                        <label class="option__checkmark" for="option1"></label>
+                        <label class="option__text" for="option1">Submission further 15 km from the city</label>
+                    </div>
+                    <div class="option__item">
+                        <input class="option__input" type="checkbox" name="option2" id="option2">
+                        <label class="option__checkmark" for="option2"></label>
+                        <label class="option__text" for="option2">Child seat with attachments</label>
+                    </div>
+                    <div class="option__item">
+                        <input class="option__input" type="checkbox" name="option3" id="option3">
+                        <label class="option__checkmark" for="option3"></label>
+                        <label class="option__text" for="option3">Wedding jewelry set</label>
+                    </div>
+                    <div class="option__item">
+                        <input class="option__input" type="checkbox" name="option4" id="option4">
+                        <label class="option__checkmark" for="option4"></label>
+                        <label class="option__text" for="option4">Additional insurance</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form form-right" action="#">
+            <div class="form__item">
+                <h2 class="form__item-header">Your order</h2>
+                <div class="form__order">
+                    <span>Rate:</span>
+                    <output id="order-tariff">—</output>
+                </div>
+                <div class="form__order">
+                    <span>Rental period:</span>
+                    <output id="order-time">—</output>
+                </div>
+                <div class="form__order">
+                    <span>Additionally:</span>
+                    <output id="order-option">—</output>
+                </div>
+            </div>
+            <div class="form__item">
+                <h2 class="form__item-header">The total cost of the trip</h2>
+                <output class="form__total" id="total">0</output>
+            </div>
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
